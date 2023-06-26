@@ -4,7 +4,7 @@
   parent: ClothingBeltStorageBase
   id: ClothingBeltUtility
   name: utility belt
-  description: Can hold various things.
+  description: Can hold various things. Badly!
   components:
   - type: Sprite
     sprite: Clothing/Belt/utility.rsi
