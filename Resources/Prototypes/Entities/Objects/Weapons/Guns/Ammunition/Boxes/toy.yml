@@ -8,7 +8,6 @@
     mayTransfer: true
     capacity: 30
   - type: Sprite
-    netsync: false
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
@@ -27,7 +26,7 @@
     capacity: 40
     proto: BulletFoam
   - type: Sprite
-    sprite: Objects/storage/boxes.rsi
+    sprite: Objects/Storage/boxes.rsi
     layers:
       - state: boxwidetoy
       - state: shelltoy

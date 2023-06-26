@@ -8,21 +8,21 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
-    netsync: false
     snapCardinals: true
     sprite: Structures/Power/Generation/ame.rsi
     state: control
   - type: Physics
   - type: Fixtures
     fixtures:
-    - shape:
-        !type:PhysShapeAabb
-        bounds: "-0.45,-0.45,0.45,0.45"
-      density: 190
-      mask:
-      - FullTileMask
-      layer:
-      - WallLayer
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 190
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -75,6 +75,13 @@
       AMEController-fuelJarContainer: !type:ContainerSlot {}
   - type: GuideHelp
     guides: [ AME, Power ]
+  - type: Electrified
+    onHandInteract: false
+    onInteractUsing: false
+    onBump: false
+    requirePower: true
+    highVoltageNode: input
+    mediumVoltageNode: ame
 
 - type: entity
   noSpawn: true
@@ -82,6 +89,8 @@
   id: AMEControllerUnanchored
   suffix: Unanchored
   components:
+  - type: Transform
+    anchored: false
   - type: Physics
     bodyType: Dynamic
 
@@ -95,21 +104,21 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite
-    netsync: false
     drawdepth: Walls
     sprite: Structures/Power/Generation/ame.rsi
     state: shield_0
   - type: Physics
   - type: Fixtures
     fixtures:
-    - shape:
-        !type:PhysShapeAabb
-        bounds: "-0.5,-0.5,0.5,0.5"
-      density: 190
-      mask:
-      - FullTileMask
-      layer:
-      - WallLayer
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 190
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -150,3 +159,9 @@
     node: ameShielding
   - type: GuideHelp
     guides: [ AME, Power ]
+  - type: Electrified
+    onHandInteract: false
+    onInteractUsing: false
+    onBump: false
+    requirePower: true
+    highVoltageNode: ame
